@@ -1,30 +1,47 @@
-# VicBlog-Frontend
+# Image x00 前端基础架构
 
-**VicBlog-Frontend 2 is now working in progress.**
-
-[<img src="https://viccrubs.visualstudio.com/_apis/public/build/definitions/9a321bef-923d-452d-852b-559124fbdcd4/4/badge"/>](https://viccrubs.visualstudio.com/VicBlog-Frontend/_build/index?definitionId=4)
-
-## Features
+这个架构是基于[我的博客前端](https://github.com/viccrubs/VicBlog-Frontend)的，包括以下技术/框架，都是截至commit的时候的最新版。
 
 - React
-- ~~Redux~~ MobX
-- React-Router v4
+- MobX
 - TypeScript
-- Webpack
-- Custom i18n implementation
-- ~~Ant Design~~ [W3.CSS](https://www.w3schools.com/w3css/default.asp) with [Office UI Fabric](https://developer.microsoft.com/en-us/fabric)
+- React-Router
+  - 页面按需加载
+- Ant Design
+- Webpack 4
+- mocha enzy chai （测试用的）
+- 自己实现的基于MobX国际化框架
 
-## Development
 
-1. `npm install`
-2. `npm start`
+## 演示功能
 
-Note that HMR is currently broken. Any help is appreciated.
+- 多语言，热切换
+  - src/app/components/LanguageSelector
+- 获得 http://vicblogapi.azurewebsites.net/articles 这个地址的数据并显示在页面中
+  - src/app/components/ArticleListDisplay
 
-## Build
+个人感觉应该能够支持这次的前端开发。
 
-`npm run build` 
+## 相关命令
 
-## License
+### 安装依赖
 
-Apache 2.0
+`npm install`
+
+### 开始开发
+
+`npm start`
+
+对代码做出更改会自动刷新页面
+
+### 打包
+
+`npm run build`
+
+先会清空dist文件夹下的内容（使用deploy/cleandist.ts），再把新打包好的文件放进去
+
+# TODO
+
+- 服务器端渲染
+- Hot Module Replacement（babel太坑了）
+- 单元测试示例
